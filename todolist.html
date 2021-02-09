@@ -115,7 +115,11 @@
 	.btn:hover{
 		background-color: #bbb;
 	}
-
+	p{
+		color: red;
+		margin-left: 20px;
+		margin-top: 7px
+	}
 
 </style>
 </head>
@@ -134,8 +138,10 @@
 		<li>Task-5</li>
 		<li>Task-6</li>
 	</ul>
+<p id="p"><!-- Please enter something --></p>
 
 <script type="text/javascript">
+	var adil;
 	var myTaskList = document.getElementsByTagName("LI");
 	for(var i = 0 ; i < myTaskList.length ; i++){
 		var span = document.createElement("SPAN");
@@ -169,7 +175,7 @@ function addTask(){
     	var t = document.createTextNode(ivalue);
     	li.appendChild(t);
     	if(ivalue === ''){
-    		alert("You must enter something dude!!");
+    		loly()
     	}
     	else{
     		document.getElementById("myList").appendChild(li);
@@ -190,7 +196,13 @@ var span = document.createElement("SPAN");
     }
 }
     
- 
+ function loly(){
+    		adil = document.getElementById("p");
+    		setTimeout(function(){ adil.innerHTML = "Please enter something. 3" }, 1000);
+    		setTimeout(function(){ adil.innerHTML = "Please enter something. 2" }, 2000);
+			setTimeout(function(){ adil.innerHTML = "Please enter something. 1" }, 3000);
+			setTimeout(function(){ adil.innerHTML = "" }, 4000);
+		}
     
 
 </script>
